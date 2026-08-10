@@ -5,6 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <style>
+        /* MOBILE FIX FOR CONTACT PAGE */
+@media (max-width: 768px) {
+  body {
+    padding: 16px !important;
+  }
+
+  /* NAV FIX */
+  nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    justify-content: center !important;
+    margin-bottom: 24px !important;
+  }
+  
+  nav a {
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+    background: rgba(255,255,255,0.15) !important;
+    border-radius: 20px !important;
+  }
+
+  /* CARDS FIX */
+  .card, .contact-card, div[style*="background: white"] {
+    margin: 0 0 16px 0 !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+  }
+
+  /* BUTTONS BIGGER FOR PHONE */
+  .btn, button, a[href*="whatsapp"], a[href*="telegram"], a[href*="mailto"], a[href*="tel"] {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 14px !important;
+    margin: 8px 0 !important;
+    font-size: 15px !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+
+  /* FORM FIX */
+  input, textarea {
+    width: 100% !important;
+    padding: 14px !important;
+    margin-bottom: 14px !important;
+    box-sizing: border-box !important;
+    border-radius: 10px !important;
+  }
+
+  /* IMAGE FIX */
+  img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 16px !important;
+  }
+}
         :root {
             --bg-soft: #f5e6ff;
             --bg-gradient: linear-gradient(135deg, #7f5a83 0%, #d9b3ff 100%);
