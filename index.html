@@ -5,11 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>beckyconnect</title>
     <style>
-        @media (max-width: 768px) {
-      body { padding: 10px !important; }
-      img { max-width: 100% !important; height: auto !important; }
-      .container, .wrapper, .box { width: 100% !important; }
-      table { width: 100% !important; }
+    @media (max-width: 768px) {
+  body { 
+    padding: 0 !important; 
+    margin: 0 !important;
+  }
+  .container, .wrapper, .box, section { 
+    width: 100% !important; 
+    padding: 15px !important;
+    margin: 0 auto !important;
+  }
+  img { 
+    max-width: 100% !important; 
+    height: auto !important; 
+  }
+  .buttons, .nav {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
 }
         :root {
             --bg: #2f103f;
