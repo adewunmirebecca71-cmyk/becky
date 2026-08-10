@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        :root {
+            --bg-soft: #f5e6ff;
+            --bg-gradient: linear-gradient(135deg, #7f5a83 0%, #d9b3ff 100%);
+            --card-bg: rgba(255, 255, 255, 0.88);
+            --border: rgba(139, 69, 145, 0.25);
+            --text-dark: #2f0a34;
+            --text-muted: #5a385f;
+            --accent: #a865c9;
+            --accent-strong: #62276c;
+            --shadow: 0 18px 50px rgba(111, 32, 112, 0.18);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 35%),
+                        var(--bg-gradient);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .page-wrap {
+            max-width: 1080px;
+            margin: 0 auto;
+            padding: 16px 22px 36px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 14px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.92);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(255, 255, 255, 0.08);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.22);
+            color: #fff;
+        }
+
+        nav a.active {
+            background: rgba(255, 245, 255, 0.2);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.34);
+        }
+
+        .hero {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 20px 24px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(12px);
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 3vw, 3rem);
+            margin-bottom: 10px;
+            color: var(--accent-strong);
+        }
+
+        .hero p {
+            max-width: 680px;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 18px;
+            margin-top: 14px;
+        }
+
+        .contact-info,
+        .contact-form {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h2,
+        .contact-form h2 {
+            margin-bottom: 12px;
+            color: var(--accent-strong);
+        }
+
+        .contact-info p {
+            margin-bottom: 14px;
+            color: var(--text-muted);
+        }
+
+        .contact-image {
+            width: 100%;
+            border-radius: 24px;
+            margin-bottom: 14px;
+            box-shadow: 0 20px 44px rgba(111, 32, 112, 0.18);
+            object-fit: cover;
+        }
+
+        .info-item {
+            margin-bottom: 18px;
+            padding: 18px 20px;
+            border-radius: 18px;
+            background: rgba(196, 137, 228, 0.15);
+            border: 1px solid rgba(171, 89, 173, 0.16);
+        }
+
+        .info-item strong {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--accent);
+        }
+.call-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 18px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 14px;
+            border: 1px solid rgba(37, 211, 102, 0.4);
+            box-shadow: 0 18px 36px rgba(37, 211, 102, 0.18);
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+            width: 220px;
+            max-width: 100%;
+        }
+
+        .call-btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+            box-shadow: 0 20px 44px rgba(37, 211, 102, 0.22);
+        }
+        .contact-form form {
+            display: grid;
+            gap: 18px;
+        }
+
+        .contact-form label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            border: 1px solid rgba(139, 69, 145, 0.22);
+            border-radius: 16px;
+            padding: 14px 16px;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: rgba(255, 255, 255, 0.92);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: rgba(109, 44, 126, 0.9);
+            box-shadow: 0 0 0 4px rgba(196, 137, 228, 0.18);
+        }
+
+        .contact-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .contact-form .feedback {
+            display: none;
+            margin-top: 12px;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: #efe0ff;
+            color: #46275d;
+            border: 1px solid rgba(122, 50, 139, 0.28);
+            font-weight: 700;
+        }
+
+        .contact-form .feedback.show {
+            display: block;
+        }
+
+        .contact-form button {
+            align-self: start;
+            padding: 14px 24px;
+            border: none;
+            border-radius: 18px;
+            background: #7b3f8d;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            background: #9e55c4;
+        }
+
+        .email-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 18px;
+            background: #b88ce4;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 14px;
+            border: 1px solid rgba(125, 58, 160, 0.34);
+            box-shadow: 0 18px 36px rgba(131, 70, 177, 0.18);
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .email-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.94;
+            box-shadow: 0 20px 44px rgba(131, 70, 177, 0.25);
+        }
+
+        .whatsapp-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 18px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 14px;
+            border: 1px solid rgba(37, 211, 102, 0.4);
+            box-shadow: 0 18px 36px rgba(37, 211, 102, 0.18);
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+            width: 220px;
+            max-width: 100%;
+        }
+
+        .whatsapp-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+            box-shadow: 0 20px 44px rgba(37, 211, 102, 0.22);
+        }
+
+        .telegram-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 18px;
+            background: #229ed9;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 14px;
+            border: 1px solid rgba(34, 158, 217, 0.4);
+            box-shadow: 0 18px 36px rgba(34, 158, 217, 0.20);
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+            width: 220px;
+            max-width: 100%;
+        }
+
+        .telegram-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+            box-shadow: 0 20px 44px rgba(34, 158, 217, 0.25);
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 940px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page-wrap {
+                padding: 24px 16px 60px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrap">
+        <header>
+            <div class="logo">Becky Connect</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="get started.html">Get Started</a>
+                <a class="active" href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <h1>Let’s create something lovely together...</h1>
+            <p>Reach out with your project details, questions, or ideas. I&rsquo;ll get back to you quickly with a thoughtful reply and a tailored plan.</p>
+        </section>
+
+        <section class="contact-grid">
+            <div class="contact-info">
+                <h2>Contact Details</h2>
+                <p>If you prefer direct messaging, use any of the options below.</p>
+
+                <div class="info-item">
+                    <strong>Email</strong>
+                    <a href="mailto:adewunmirebecca71@gmail.com" class="email-link">adewunmirebecca71@gmail.com</a>
+                </div>
+
+                <div class="info-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+2349023231871" class="call-btn">
+                        09023231871
+                    </a>
+                </div>
+
+                <div class="info-item">
+                    <strong>WhatsApp</strong>
+                    <a href="https://wa.me/+2349023231871" class="whatsapp-link" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+                </div>
+
+                <div class="info-item">
+                    <strong>Telegram</strong>
+                    <a href="https://t.me/+2349023231871" class="telegram-link" target="_blank" rel="noreferrer">Chat on Telegram</a>
+                </div>
+
+                <div class="info-item">
+                    <strong>Office</strong>
+                    <span>Ibeju-Lekki, Ajah, Lagos, Nigeria.</span>
+                </div>
+
+                <div class="footer-note">Feel free to send a message any time. I aim to respond within 24 hours during business days.</div>
+            </div>
+
+            <div class="contact-form">
+                <img src="image/reb.jpg" alt="Becky Connect" class="contact-image">
+                <h2>Send a Message</h2>
+                <form id="contactForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+
+                    <button type="submit">Send Message</button>
+                    <div class="feedback" id="formFeedback">Request completed. We will get back to you as soon as possible.</div>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const formFeedback = document.getElementById('formFeedback');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+                contactForm.reportValidity();
+                return;
+            }
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const emailSubject = encodeURIComponent('New Website Enquiry From ' + name);
+            const emailBody = encodeURIComponent(
+                'Name: ' + name + '\n' +
+                'Email: ' + email + '\n' +
+                'Message: ' + message
+            );
+
+            const smsBody = encodeURIComponent(
+                'Hi Becky Connect, my name is ' + name + '. ' +
+                'My email is ' + email + '. ' +
+                'My message is: ' + message
+            );
+
+            const mailtoLink = 'mailto:adewunmirebecca71@gmail.com?subject=' + emailSubject + '&body=' + emailBody;
+            const smsLink = 'sms:+2349023231871?body=' + smsBody;
+
+            window.location.href = mailtoLink;
+            window.open(smsLink, '_blank');
+
+            formFeedback.classList.add('show');
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>

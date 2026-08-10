@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        :root {
+            --bg: #f8f0ff;
+            --hero: #eddaff;
+            --surface: #ffffff;
+            --text: #2f1a40;
+            --muted: #6e5484;
+            --accent: #7e4fa7;
+            --accent-soft: #c9a4ff;
+            --border: rgba(126, 79, 167, 0.16);
+            --shadow: 0 26px 60px rgba(112, 57, 142, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.8), transparent 35%),
+                        linear-gradient(135deg, #7f5a83 0%, #d9b3ff 100%);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 24px 24px 56px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 28px;
+        }
+
+        .brand {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 600;
+            padding: 10px 16px;
+            border-radius: 999px;
+            border: 1px solid rgba(126, 79, 167, 0.12);
+            background: rgba(255, 255, 255, 0.42);
+            transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+        nav a.active {
+            color: var(--accent);
+            background: rgba(126, 79, 167, 0.12);
+            border-color: rgba(126, 79, 167, 0.25);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.15fr 0.9fr;
+            gap: 26px;
+            padding: 32px 32px 36px;
+            background: var(--hero);
+            border-radius: 32px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 4vw, 3.5rem);
+            margin-bottom: 18px;
+            color: var(--text);
+        }
+
+        .hero h2 {
+            color: var(--muted);
+            font-size: 1.05rem;
+            max-width: 640px;
+        }
+
+        .hero-graphic {
+            display: grid;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .hero-image {
+            width: 400%;
+            max-width: 470px;
+            border-radius: 32px;
+            border-color: white;
+            border: line 6px solid;
+            border: 1px solid rgba(126, 79, 167, 0.12);
+            box-shadow: 0 18px 40px rgba(112, 57, 142, 0.16);
+            object-fit: cover;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 28px;
+        }
+
+        .service-card {
+            background: var(--surface);
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 72px rgba(112, 57, 142, 0.18);
+        }
+
+        .service-card h3 {
+            margin-bottom: 14px;
+            color: var(--accent);
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            color: var(--muted);
+        }
+
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 38px;
+        }
+
+        .highlight {
+            display: flex;
+            gap: 18px;
+            padding: 24px;
+            border-radius: 26px;
+            border: 1px solid rgba(126, 79, 167, 0.12);
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .highlight-icon {
+            width: 54px;
+            height: 54px;
+            border-radius: 18px;
+            background: rgba(126, 79, 167, 0.13);
+            display: grid;
+            place-items: center;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .highlight-content strong {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .highlight-content span {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .cta-card {
+            margin-top: 28px;
+            padding: 28px 30px;
+            border-radius: 32px;
+            background: linear-gradient(135deg, rgba(126, 79, 167, 0.12), rgba(214, 178, 255, 0.28));
+            border: 1px solid rgba(126, 79, 167, 0.13);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cta-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 10px;
+        }
+
+        .cta-card p {
+            max-width: 620px;
+            color:black
+        }
+
+        .cta-card a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 18px;
+            background: var(--accent);
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .cta-card a:hover {
+            transform: translateY(-2px);
+            background: #663e99;
+        }
+
+        @media (max-width: 980px) {
+            .hero,
+            .services-grid,
+            .highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div class="brand">Becky Connect</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a class="active" href="services.html">Services</a>
+                <a href="get started.html">Get Started</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div>
+                <h1>Services designed for creative brands and ambitious teams.</h1>
+                <h2>Explore the services I offer, each built to help your online presence feel polished, memorable, and strategically aligned with your goals.</h2>
+            </div>
+            <div class="hero-graphic">
+                <img src="image/uni.jpg" alt="uni.jpg" class="hero-image">
+            </div>
+        </section>
+
+        <section class="services-grid">
+            <article class="service-card">
+                <h3>Web Design</h3>
+                <p>Beautiful visuals, strong layouts, and intuitive interfaces for landing pages, portfolios, and business websites.</p>
+            </article>
+            <article class="service-card">
+                <h3>Brand Identity</h3>
+                <p>Strategic logo systems, typography, and color direction that help your brand stand out with confidence.</p>
+            </article>
+            <article class="service-card">
+                <h3>Front-end Build</h3>
+                <p>Responsive, modern web pages built to perform cleanly across devices with fast loading and polished interactions.</p>
+            </article>
+        </section>
+
+
+        <section class="cta-card">
+            <div>
+                <h3>Ready to move forward?</h3>
+                <p>Let’s discuss the right service package for your next website or brand refresh.</p>
+            </div>
+            <a href="contact.html">Book a call</a>
+        </section>
+    </div>
+</body>
+</html>

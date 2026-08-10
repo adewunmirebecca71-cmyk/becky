@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        :root {
+            --bg: #2f103f;
+            --surface: #fdf0ff;
+            --surface-soft: #f4dcff;
+            --text: #240d32;
+            --text-muted: #6a4b75;
+            --accent: #d740b0;
+            --accent-2: #8a3ec8;
+            --accent-soft: #e9c2ff;
+            --border: rgba(215, 64, 176, 0.18);
+            --shadow: 0 24px 60px rgba(120, 55, 140, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text);
+            background: radial-gradient(circle at top left, rgba(250, 191, 255, 0.15), transparent 28%),
+                        linear-gradient(180deg, #38165a 0%, #2f103f 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 24px 48px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 28px;
+        }
+
+        .brand {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+        }
+
+        nav a {
+            color: var(--surface);
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        nav a:hover {
+            background: rgba(215, 64, 176, 0.22);
+            color: #fff;
+            border-color: rgba(255, 255, 255, 0.34);
+        }
+
+        nav a.active {
+            background: rgba(250, 226, 255, 0.2);
+            color: #fff;
+            border-color: rgba(255, 232, 252, 0.5);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.34);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: center;
+            padding: 32px 28px;
+            border-radius: 34px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(243,232,255,0.95) 100%);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 4vw, 3.8rem);
+            margin-bottom: 18px;
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 620px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .stat-card {
+            background: var(--surface-soft);
+            padding: 24px;
+            border-radius: 24px;
+            border: 1px solid rgba(138, 91, 207, 0.12);
+            text-align: center;
+        }
+
+        .stat-card strong {
+            display: block;
+            font-size: 1.8rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .stat-card span {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .profile {
+            display: grid;
+            grid-template-columns: 1.1fr 0.95fr;
+            gap: 24px;
+            margin-top: 28px;
+        }
+
+        .profile-card,
+        .values-card {
+            background: var(--surface);
+            border-radius: 30px;
+            border: 1px solid var(--border);
+            padding: 34px;
+            box-shadow: var(--shadow);
+        }
+
+        .profile-card h2,
+        .values-card h2 {
+            margin-bottom: 16px;
+            color: var(--accent);
+        }
+
+        .profile-card p,
+        .values-card p {
+            color: var(--text-muted);
+        }
+
+        .value-list {
+            display: grid;
+            gap: 18px;
+            margin-top: 16px;
+        }
+
+        .value-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 18px;
+            border-radius: 18px;
+            background: rgba(138, 91, 207, 0.08);
+        }
+
+        .value-item strong {
+            color: var(--accent);
+            min-width: 86px;
+            font-size: 0.95rem;
+        }
+
+        .timeline {
+            margin-top: 28px;
+            display: grid;
+            gap: 14px;
+        }
+
+        .timeline-item {
+            display: grid;
+            gap: 12px;
+            padding: 24px;
+            border-radius: 24px;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(138, 91, 207, 0.12);
+        }
+
+        .timeline-item strong {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .timeline-item p {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+        }
+
+        .cta {
+            margin-top: 28px;
+            padding: 24px 28px;
+            border-radius: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, rgba(215, 64, 176, 0.18), rgba(233, 194, 255, 0.28));
+            border: 1px solid rgba(215, 64, 176, 0.16);
+        }
+
+        .cta h3 {
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        .cta p {
+            color: var(--text-muted);
+            max-width: 520px;
+        }
+
+        .cta a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .cta a:hover {
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, #a12c84, #7d2ec7);
+        }
+
+        .cta a:hover {
+            background: #6f3a9d;
+        }
+
+        @media (max-width: 900px) {
+            .hero,
+            .profile {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 680px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 18px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand">Becky Connect</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a class="active" href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="get started.html">Get Started</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div>
+                <h1>Crafting thoughtful digital experiences with a personal touch.</h1>
+                <p>I’m a creative professional focusing on elegant web design, meaningful branding, and polished visual storytelling. My work balances clarity, color, and modern usability so every project feels memorable.</p>
+                <div class="stats">
+                    <div class="stat-card">
+                        <strong>8+</strong>
+                        <span>Years experience</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>120+</strong>
+                        <span>Projects delivered</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>4.9/5</strong>
+                        <span>Client satisfaction</span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="image/rebe.jpg" alt="About hero illustration" style="width:100%; border-radius:28px; object-fit: cover; box-shadow: 0 24px 60px rgba(103, 51, 137, 0.12);">
+            </div>
+        </section>
+
+        <div class="profile">
+            <article class="profile-card">
+                <h2>Who I am</h2>
+                <p>I combine design thinking and modern web development to help brands stand out online with clean, polished, and approachable experiences.</p>
+            </article>
+
+            <article class="values-card">
+                <h2>Core values</h2>
+                <div class="value-list">
+                    <div class="value-item">
+                        <strong>Clarity</strong>
+                        <span>Design that communicates instantly and feels intuitive.</span>
+                    </div>
+                    <div class="value-item">
+                        <strong>Craft</strong>
+                        <span>Attention to detail in typography, spacing, color, and interaction.</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <section class="cta">
+            <div>
+                <h3>Interested in working together?</h3>
+                <p>Let’s bring your next digital project to life with a polished, thoughtful web presence.</p>
+            </div>
+            <a href="contact.html">Start a conversation.</a>
+        </section>
+    </div>
+</body>
+</html>
