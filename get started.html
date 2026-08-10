@@ -9,6 +9,101 @@
   body { 
     padding: 0 !important; 
     margin: 0 !important;
+    background: #7C3AED !important; /* your purple bg */
+  }
+  
+  /* NAV BAR FIX */
+  .header, nav {
+    padding: 16px !important;
+    text-align: center !important;
+  }
+  .nav-buttons, .menu {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+  }
+  .nav-buttons button, .nav-buttons a {
+    font-size: 13px !important;
+    padding: 8px 14px !important;
+    border-radius: 20px !important;
+    background: rgba(255,255,255,0.9) !important;
+    border: none !important;
+    white-space: nowrap !important;
+  }
+  .nav-buttons button.active {
+    background: #fff !important;
+    font-weight: 600 !important;
+  }
+
+  /* PAGE CONTENT FIX */
+  .container, main, section { 
+    width: 100% !important; 
+    padding: 20px 16px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+  }
+  h1 { 
+    font-size: 28px !important; 
+    line-height: 1.3 !important;
+    text-align: center !important;
+    color: #fff !important;
+  }
+  p {
+    color: rgba(255,255,255,0.9) !important;
+    text-align: center !important;
+  }
+  
+  /* THE 01 02 03 CARDS */
+  .step-card, .info-card { 
+    width: 100% !important; 
+    padding: 18px !important;
+    margin: 14px 0 !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,0.95) !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    gap: 12px !important;
+  }
+  .step-number {
+    background: #EC4899 !important; /* pink */
+    color: #fff !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    flex-shrink: 0 !important;
+  }
+  
+  img { 
+    width: 100% !important; 
+    height: auto !important; 
+    border-radius: 18px !important;
+    display: block !important;
+    margin: 20px 0 !important;
+  }
+  
+  .cta-box {
+    background: #A855F7 !important;
+    padding: 20px !important;
+    border-radius: 18px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: 20px 0 !important;
+  }
+  .btn {
+    background: #fff !important;
+    color: #7C3AED !important;
+    padding: 12px 20px !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    border: none !important;
+  }
+}
+</style>
+  body { 
+    padding: 0 !important; 
+    margin: 0 !important;
     background: #6B46C1 !important; /* keep purple background */
   }
   .container, main, section { 
