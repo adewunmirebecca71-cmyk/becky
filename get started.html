@@ -234,6 +234,28 @@
                 margin-right: 16px;
             }
         }
+        .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* stack instead of side-by-side */
+  }
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
     </style>
 </head>
 <body>

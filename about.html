@@ -17,6 +17,22 @@
             --border: rgba(215, 64, 176, 0.18);
             --shadow: 0 24px 60px rgba(120, 55, 140, 0.16);
         }
+        .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* stack instead of side-by-side */
+  }
+}
 
         * {
             box-sizing: border-box;

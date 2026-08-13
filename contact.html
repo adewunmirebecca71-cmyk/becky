@@ -5,30 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <style>
-        /* FINAL POSITIONING TWEAKS */
-@media (max-width: 768px) {
-  /* More space under BECKY CONNECT */
-  h1, .logo {
-    margin-bottom: 20px !important;
-    text-align: center !important;
-  }
-
-  /* Space between the 2 main cards */
-  .card + .card {
-    margin-top: 24px !important;
-  }
-
-  /* Center the nav better */
-  nav {
-    margin-bottom: 32px !important;
-  }
-
-  /* Make text breathe more */
-  p {
-    line-height: 1.6 !important;
-  }
-}
-</style>
         :root {
             --bg-soft: #f5e6ff;
             --bg-gradient: linear-gradient(135deg, #7f5a83 0%, #d9b3ff 100%);
@@ -59,14 +35,14 @@
         .page-wrap {
             max-width: 1080px;
             margin: 0 auto;
-            padding: 16px 22px 36px;
+            padding: 28px 22px 56px;
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 14px;
+            padding-bottom: 32px;
         }
 
         .logo {
@@ -104,28 +80,28 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 28px;
-            padding: 20px 24px;
+            padding: 32px 28px;
             box-shadow: var(--shadow);
             backdrop-filter: blur(12px);
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 3vw, 3rem);
-            margin-bottom: 10px;
+            font-size: clamp(2.3rem, 3.5vw, 4rem);
+            margin-bottom: 18px;
             color: var(--accent-strong);
         }
 
         .hero p {
             max-width: 680px;
             color: var(--text-muted);
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
         .contact-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 18px;
-            margin-top: 14px;
+            gap: 24px;
+            margin-top: 32px;
         }
 
         .contact-info,
@@ -133,25 +109,25 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 28px;
-            padding: 20px;
+            padding: 28px;
             box-shadow: var(--shadow);
         }
 
         .contact-info h2,
         .contact-form h2 {
-            margin-bottom: 12px;
+            margin-bottom: 16px;
             color: var(--accent-strong);
         }
 
         .contact-info p {
-            margin-bottom: 14px;
+            margin-bottom: 24px;
             color: var(--text-muted);
         }
 
         .contact-image {
             width: 100%;
             border-radius: 24px;
-            margin-bottom: 14px;
+            margin-bottom: 24px;
             box-shadow: 0 20px 44px rgba(111, 32, 112, 0.18);
             object-fit: cover;
         }
@@ -169,29 +145,7 @@
             margin-bottom: 6px;
             color: var(--accent);
         }
-.call-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 20px;
-            border-radius: 18px;
-            background: #25d366;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-            margin-top: 14px;
-            border: 1px solid rgba(37, 211, 102, 0.4);
-            box-shadow: 0 18px 36px rgba(37, 211, 102, 0.18);
-            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-            width: 220px;
-            max-width: 100%;
-        }
 
-        .call-btn:hover {
-            transform: translateY(-2px);
-            opacity: 0.92;
-            box-shadow: 0 20px 44px rgba(37, 211, 102, 0.22);
-        }
         .contact-form form {
             display: grid;
             gap: 18px;
@@ -222,7 +176,7 @@
         }
 
         .contact-form textarea {
-            min-height: 140px;
+            min-height: 180px;
             resize: vertical;
         }
 
@@ -279,6 +233,28 @@
             opacity: 0.94;
             box-shadow: 0 20px 44px rgba(131, 70, 177, 0.25);
         }
+         .phone{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 18px;
+            background: #25d366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 14px;
+            border: 1px solid rgba(37, 211, 102, 0.4);
+            box-shadow: 0 18px 36px rgba(37, 211, 102, 0.18);
+            transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+        }
+
+         .phone:hover {
+            transform: translateY(-2px);
+            opacity: 0.92;
+            box-shadow: 0 20px 44px rgba(37, 211, 102, 0.22);
+        }
+
 
         .whatsapp-link {
             display: inline-flex;
@@ -294,8 +270,6 @@
             border: 1px solid rgba(37, 211, 102, 0.4);
             box-shadow: 0 18px 36px rgba(37, 211, 102, 0.18);
             transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-            width: 220px;
-            max-width: 100%;
         }
 
         .whatsapp-link:hover {
@@ -318,8 +292,6 @@
             border: 1px solid rgba(34, 158, 217, 0.4);
             box-shadow: 0 18px 36px rgba(34, 158, 217, 0.20);
             transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
-            width: 220px;
-            max-width: 100%;
         }
 
         .telegram-link:hover {
@@ -329,7 +301,7 @@
         }
 
         .footer-note {
-            margin-top: 20px;
+            margin-top: 34px;
             color: var(--text-muted);
             font-size: 0.95rem;
         }
@@ -350,6 +322,22 @@
                 align-items: flex-start;
                 gap: 16px;
             }
+            .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* stack instead of side-by-side */
+  }
+}
 
             nav a {
                 margin-left: 0;
@@ -372,14 +360,15 @@
         </header>
 
         <section class="hero">
-            <h1>Let’s create something lovely together...</h1>
+            <h1>Let’s create something lovely together.</h1>
             <p>Reach out with your project details, questions, or ideas. I&rsquo;ll get back to you quickly with a thoughtful reply and a tailored plan.</p>
         </section>
 
         <section class="contact-grid">
             <div class="contact-info">
                 <h2>Contact Details</h2>
-                <p>If you prefer direct messaging, use any of the options below.</p>
+                <img src="image/reb.jpg" alt="Contact illustration" class="contact-image">
+                <p>If you prefer direct messaging, use any of the options below. I am happy to help with collaborations, inquiries, or general support.</p>
 
                 <div class="info-item">
                     <strong>Email</strong>
@@ -388,9 +377,7 @@
 
                 <div class="info-item">
                     <strong>Phone</strong>
-                    <a href="tel:+2349023231871" class="call-btn">
-                        09023231871
-                    </a>
+                    <a href="tel:+2349023231871" class="phone" target="_blank" rel="noreferrer">Call 09023231871</a>
                 </div>
 
                 <div class="info-item">
@@ -405,14 +392,13 @@
 
                 <div class="info-item">
                     <strong>Office</strong>
-                    <span>Ibeju-Lekki, Ajah, Lagos, Nigeria.</span>
+                    <span><h4>Ibeju-Lekki,Ajah,Lagos,Nigeria.</h4></span>
                 </div>
 
                 <div class="footer-note">Feel free to send a message any time. I aim to respond within 24 hours during business days.</div>
             </div>
 
             <div class="contact-form">
-                <img src="image/reb.jpg" alt="Becky Connect" class="contact-image">
                 <h2>Send a Message</h2>
                 <form id="contactForm">
                     <label for="name">Name</label>

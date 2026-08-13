@@ -5,62 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
     <style>
-        @media (max-width: 768px) {
-  body { 
-    padding: 0 !important; 
-    margin: 0 !important;
-    background: linear-gradient(180deg, #C4B5FD 0%, #EDE9FE 100%) !important;
-  }
-  .container, main, section { 
-    width: 100% !important; 
-    padding: 20px 16px !important;
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-  }
-  .header {
-    text-align: center !important;
-    padding: 10px 0 !important;
-  }
-  .nav button {
-    font-size: 14px !important;
-    padding: 8px 12px !important;
-    margin: 4px !important;
-    border-radius: 20px !important;
-  }
-  h1 { 
-    font-size: 32px !important; 
-    line-height: 1.2 !important;
-    padding: 0 10px !important;
-  }
-  .hero-box, .service-card { 
-    width: 100% !important; 
-    padding: 20px !important;
-    margin: 16px 0 !important;
-    border-radius: 20px !important;
-    background: rgba(255,255,255,0.9) !important;
-    box-sizing: border-box !important;
-  }
-  img { 
-    width: 100% !important; 
-    height: auto !important; 
-    border-radius: 20px !important;
-    display: block !important;
-    margin: 20px 0 !important;
-  }
-  .cta-box {
-    padding: 20px !important;
-    border-radius: 20px !important;
-    text-align: left !important;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-  .btn {
-    padding: 12px 20px !important;
-    border-radius: 12px !important;
-    white-space: nowrap !important;
-  }
-}s
         :root {
             --bg: #f8f0ff;
             --hero: #eddaff;
@@ -149,7 +93,7 @@
             color: var(--text);
         }
 
-        .hero h2 {
+        .hero p {
             color: var(--muted);
             font-size: 1.05rem;
             max-width: 640px;
@@ -162,15 +106,29 @@
         }
 
         .hero-image {
-            width: 400%;
-            max-width: 470px;
+            width: 500px;
+            max-width: 320px;
             border-radius: 32px;
-            border-color: white;
-            border: line 6px solid;
             border: 1px solid rgba(126, 79, 167, 0.12);
             box-shadow: 0 18px 40px rgba(112, 57, 142, 0.16);
             object-fit: cover;
         }
+        .row {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column; /* stack instead of side-by-side */
+  }
+}
+        .container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 16px;
+  margin: 0 auto;
+}
 
         .services-grid {
             display: grid;
@@ -259,8 +217,8 @@
         }
 
         .cta-card p {
+            color: var(--muted);
             max-width: 620px;
-            color:black
         }
 
         .cta-card a {
@@ -319,7 +277,7 @@
         <section class="hero">
             <div>
                 <h1>Services designed for creative brands and ambitious teams.</h1>
-                <h2>Explore the services I offer, each built to help your online presence feel polished, memorable, and strategically aligned with your goals.</h2>
+                <p>Explore the services I offer, each built to help your online presence feel polished, memorable, and strategically aligned with your goals.</p>
             </div>
             <div class="hero-graphic">
                 <img src="image/uni.jpg" alt="uni.jpg" class="hero-image">
